@@ -3,7 +3,7 @@ require 'minitest/pride'
 require './lib/review'
 require './lib/book'
 
-class ReviewTest < Minitest::Test
+class BookTest < Minitest::Test
 
   def test_it_exists
     book = Book.new({title: 'Practical Object Oriented Design in Ruby', author: 'Sandi Metz'})
