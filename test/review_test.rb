@@ -7,12 +7,17 @@ class ReviewTest < Minitest::Test
   def test_it_exists
     review = Review.new({name: "Aral Nuraduum", score: "4.5"})
 
-    assert_instance_of Revew, review
+    assert_instance_of Review, review
   end
 
-  def teat_reviewer_has_a_first_name
+  def test_it_can_split_names
     review = Review.new({name: "Aral Nuraduum", score: "4.5"})
 
+    assert_equal ["Aral", "Nuraduum"], review.split_name
+  end
+  
+  def test_reviewer_has_a_first_name
+    review = Review.new({name: "Aral Nuraduum", score: "4.5"})
     assert_equal "Aral", review.reviewer_first_name
   end
 
