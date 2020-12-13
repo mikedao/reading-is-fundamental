@@ -11,4 +11,10 @@ class BookClubTest < Minitest::Test
 
     assert_instance_of BookClub, bookclub
   end
+
+  def test_it_has_a_name
+  bookclub = BookClub.new("Reading Rainbow Club")
+
+    assert_equal "Reading Rainbow Club", bookclub.name
+  end
 end
