@@ -1,8 +1,10 @@
 class Book
   attr_reader :book
+  attr_writer :read
 
   def initialize(book)
     @book = book
+    @read = false
   end
 
   def title
@@ -11,5 +13,13 @@ class Book
 
   def author
     @book.values.last
+  end
+
+  def read?
+    @read
+  end
+
+  def read
+    self.read = true
   end
 end
