@@ -27,5 +27,23 @@ class BookClubTest < Minitest::Test
     assert_equal [book], club.books
   end
 
-  
+  def test_it_has_unread_books
+    club = BookClub.new
+    book = Book.new({title: 'Practical Object Oriented Design in Ruby', author: 'Sandi Metz'})
+
+    club.add_book(book)
+
+    assert_equal [book], club.unread_books
+  end
+
+  def test_it_has_read_books
+    club = BookClub.new
+    book = Book.new({title: 'Practical Object Oriented Design in Ruby', author: 'Sandi Metz'})
+
+    club.add_book(book)
+    club.read_book(book)
+
+    assert_equal [], club.unread_books
+    assert_equal [book], club.read_books
+  end
 end
