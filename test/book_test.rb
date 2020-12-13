@@ -17,6 +17,23 @@ class BookTest < Minitest::Test
     assert_equal 'Practical Object Oriented Design in Ruby', book.title
   end
 
+  def test_it_has_an_author
+    book = Book.new({title: 'Practical Object Oriented Design in Ruby', author: 'Sandi Metz'})
+
+    assert_equal 'Sandi Metz', book.author
+  end
+
+  def test_it_has_been_read
+    book = Book.new({title: 'Practical Object Oriented Design in Ruby', author: 'Sandi Metz'})
+
+    assert_equal false, book.read?
+
+    book.read = true
+
+    assert_equal true, book.read?
+  end
+
+  # pry(main)> book.author
 end
   # Use TDD to create a `Book` class that responds to the following interaction pattern:
   #
@@ -30,12 +47,9 @@ end
   # pry(main)> require './lib/book'
   # # => true
   #
-  # # => #<Book:0x00007fe0d0851138...>
-  #
   # pry(main)> book.title
   # # => 'Practical Object Oriented Design in Ruby'
   #
-  # pry(main)> book.author
   # # => 'Sandi Metz'
   #
   # pry(main)> book.read?
