@@ -46,4 +46,26 @@ class BookClubTest < Minitest::Test
     assert_equal [], club.unread_books
     assert_equal [book], club.read_books
   end
+
+  def test_it_has_an_average_review_per_book
+    club = BookClub.new
+    book1 = Book.new({title: 'Practical Object Oriented Design in Ruby', author: 'Sandi Metz'})
+    book2 = Book.new({title: 'Learning Ruby the Hard Way', author: 'Zed Shaw'})
+    review_1 = Review.new({name: "Aral Nuraduum", score: "3.5"})
+    review_2 = Review.new({name: "Dan Mizer", score: "2.5"})
+    review_3 = Review.new({name: "James Smith", score: "4.7"})
+    review_4 = Review.new({name: "Aniz Arazak", score: "5.0"})
+
+    club.add_book(book1)
+    club.read_book(book1)
+    club.add_book(book2)
+    club.read_book(book2)
+    book1.add_review(review_1)
+    book1.add_review(review_2)
+    book1.add_review(review_3)
+    book2.add_review(review_4)
+
+    assert_equal 2, club.average_reviews_per_book
+  end
+
 end
