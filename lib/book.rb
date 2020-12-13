@@ -1,10 +1,12 @@
 class Book
-  attr_reader :book
+  attr_reader :book,
+              :reviews
   attr_writer :read
 
   def initialize(book)
     @book = book
     @read = false
+    @reviews = []
   end
 
   def title
@@ -21,5 +23,9 @@ class Book
 
   def read
     self.read = true
+  end
+
+  def add_review(review)
+    @reviews << review
   end
 end
