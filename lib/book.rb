@@ -28,4 +28,10 @@ class Book
   def add_review(review)
     @reviews << review
   end
+
+  def reviews_greater_than(score)
+    @reviews.find_all do |review|
+      review.values.last > score
+    end
+  end
 end
