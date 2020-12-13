@@ -1,0 +1,27 @@
+require 'minitest/autorun'
+require 'minitest/pride'
+require './lib/review'
+
+class ReviewTest < Minitest::Test
+
+  def test_it_exists
+    review = Review.new({name: "Aral Nuraduum", score: "4.5"})
+
+    assert_instance_of Review, review
+  end
+end
+
+
+    # pry(main)> require './lib/review'
+    # # => true
+    #
+    # # => #<Review:0x00007fd8273d21e0...>
+    #
+    # pry(main)> review.reviewer_first_name
+    # # => "Aral"
+    #
+    # pry(main)> review.reviewer_last_name
+    # # => "Nuraduum"
+    #
+    # pry(main)> review.score
+    # # => 4.5
