@@ -6,10 +6,14 @@ class Review
   end
 
   def reviewer_first_name
-    @reviewer.values.first.split[0].to_s
+    @reviewer.values.first.split.first.to_s
   end
 
   def reviewer_last_name
-    @reviewer.values.first.split[1].to_s
+    @reviewer.values.first.split.last.to_s
+  end
+
+  def score
+    @reviewer.values.last
   end
 end
