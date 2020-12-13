@@ -23,4 +23,17 @@ class ReviewTest < Minitest::Test
     assert_equal 'Sandi Metz', book.author
   end
 
+  def test_it_is_not_read_by_default
+    book = Book.new({title: 'Practical Object Oriented Design in Ruby', author: 'Sandi Metz'})
+
+    assert_equal false, book.read?
+  end
+
+  def test_it_can_be_read
+    book = Book.new({title: 'Practical Object Oriented Design in Ruby', author: 'Sandi Metz'})
+
+    book.read = true
+
+    assert_equal true, book.read?
+  end
 end
