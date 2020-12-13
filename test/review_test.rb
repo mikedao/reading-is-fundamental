@@ -15,6 +15,12 @@ class ReviewTest < Minitest::Test
 
     assert_equal "Aral", review.reviewer_first_name
   end
+
+  def test_it_has_a_last_name
+    review = Review.new({name: "Aral Nuraduum", score: "4.5"})
+
+    assert_equal "Nuraduum", review.reviewer_last_name
+  end
 end
 
 
