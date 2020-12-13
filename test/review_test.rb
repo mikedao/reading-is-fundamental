@@ -9,6 +9,12 @@ class ReviewTest < Minitest::Test
 
     assert_instance_of Review, review
   end
+
+  def test_it_has_a_first_name
+    review = Review.new({name: "Aral Nuraduum", score: "4.5"})
+
+    assert_equal "Aral", review.reviewer_first_name
+  end
 end
 
 
@@ -17,7 +23,6 @@ end
     #
     # # => #<Review:0x00007fd8273d21e0...>
     #
-    # pry(main)> review.reviewer_first_name
     # # => "Aral"
     #
     # pry(main)> review.reviewer_last_name
