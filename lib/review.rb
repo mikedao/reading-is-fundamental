@@ -14,6 +14,6 @@ class Review
   end
 
   def score
-    @reviewer.values.last
+    @reviewer.values.last.to_f
   end
 end
