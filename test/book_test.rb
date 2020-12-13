@@ -11,6 +11,12 @@ class BookTest < Minitest::Test
     assert_instance_of Book, book
   end
 
+  def test_it_has_a_title
+    book = Book.new({title: 'Practical Object Oriented Design in Ruby', author: 'Sandi Metz'})
+
+    assert_equal 'Practical Object Oriented Design in Ruby', book.title
+  end
+
 end
   # Use TDD to create a `Book` class that responds to the following interaction pattern:
   #
