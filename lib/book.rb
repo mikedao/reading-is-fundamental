@@ -8,4 +8,8 @@ class Book
   def title
     @book.values.first
   end
+
+  def author
+    @book.values.last
+  end
 end
