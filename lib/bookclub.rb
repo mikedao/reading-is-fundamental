@@ -25,4 +25,16 @@ class BookClub
     book.read = true
   end
 
+  def total_reviews
+    @total_reviews = 0
+    @books.each do |book|
+      @total_reviews += (book.reviews.count)
+    end
+  end
+
+  def average_reviews_per_book
+    total_reviews
+    @average = (@total_reviews / @books.count)
+  end
+
 end
