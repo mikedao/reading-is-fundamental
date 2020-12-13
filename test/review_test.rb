@@ -28,17 +28,3 @@ class ReviewTest < Minitest::Test
     assert_equal 4.5, review.score
   end
 end
-
-
-    # pry(main)> require './lib/review'
-    # # => true
-    #
-    # # => #<Review:0x00007fd8273d21e0...>
-    #
-    # # => "Aral"
-    #
-    # pry(main)> review.reviewer_last_name
-    # # => "Nuraduum"
-    #
-    # pry(main)> review.score
-    # # => 4.5
